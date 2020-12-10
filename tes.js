@@ -1,1 +1,1 @@
-console.log(Date.now())
+console.log(require('md5')('rahasia'))
