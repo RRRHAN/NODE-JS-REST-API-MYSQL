@@ -31,7 +31,7 @@ db.connect(error => {
 // crud pelanggan
 // =============================================================================
 
-app.get("/pelanggan", (req, res) => {
+app.get("/", (req, res) => {
     let sql = "select * from pelanggan"
     db.query(sql, (error, result) => {
         let response = null
@@ -48,7 +48,7 @@ app.get("/pelanggan", (req, res) => {
         res.json(response)
     })
 })
-app.get("/pelanggan/:id", (req, res) => {
+app.get("/:id", (req, res) => {
     let data = {
         id_pelanggan: req.params.id
     }
@@ -68,7 +68,7 @@ app.get("/pelanggan/:id", (req, res) => {
         res.json(response)
     })
 })
-app.post("/pelanggan", (req, res) => {
+app.post("/", (req, res) => {
 
     let data = {
         nama_pelanggan: req.body.nama_pelanggan,
@@ -92,7 +92,7 @@ app.post("/pelanggan", (req, res) => {
         res.json(response)
     })
 })
-app.put("/pelanggan", (req, res) => {
+app.put("/", (req, res) => {
 
     let data = [{
             nomor_pelanggan: req.body.nomor_pelanggan,
@@ -125,7 +125,7 @@ app.put("/pelanggan", (req, res) => {
         res.json(response)
     })
 })
-app.delete("/pelanggan/:id", (req, res) => {
+app.delete("/:id", (req, res) => {
     let data = {
         id_pelanggan: req.params.id
     }
